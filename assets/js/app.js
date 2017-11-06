@@ -1,11 +1,15 @@
 // boton input
 var boton = document.getElementById("boton"); //variable llamar boton
 
+
+
 //llamar un evento para ingresar por el boton el texto
 boton.addEventListener("click", function(){
+
 	//ingresar el textarea
 	var texto = document.getElementById("comment").value;
-	//limpiar el texto que se ingrese para que no se guarde
+	
+	//limpiar el texto que se ingrese para que no se guarde se llama desde el coument.
 	document.getElementById("comment").value = "";
 
 	//llamar al contenedor donde se ira el posteo, area definida en el html
@@ -16,8 +20,11 @@ boton.addEventListener("click", function(){
 
 	//si el texto esta vacio no dejar twittear
 	if(texto.length == 0 || texto == null) { // si no hay nada
-		
-		return document.getElementById("boton").disabled = true;// para que se corte ahi la condicion sino sera true y se crea la condicion
+		//desabilita el boton
+		return boton.disabled = true;// para que se corte ahi la condicion sino sera true y se crea la condicion
+	
+	} else{
+
 	};
 
 	//nodo texto ingresado con texto que se va a ver en nueva seccion
@@ -35,6 +42,8 @@ boton.addEventListener("click", function(){
 	//se pasa al contenedor del html
 	post.appendChild(newPost);
 
+	document.getElementById("limite").innerHTML = "140";
+
 	
 
 
@@ -44,12 +53,30 @@ boton.addEventListener("click", function(){
 //calcular caracteres
 
  comment.onkeyup = function(){ //detecta el uso del teclado
+
+ 	
  	//obtengo el texto en p
  	var limiteInicial = document.getElementById("limite");
  	//obtengo el input del texarea
 	var comment = document.getElementById("comment");
  	//calculo el largo del input(number)
  	var caracter = comment.value.length;
+
+ 	
  	//PARA TRANSFORMAR EL NUMERO A TEXTO SE SUMA UN NUMERO AL TEXTO VACIO!!
  	limiteInicial.innerText = "" + (140 - caracter);
- }
+
+ 	//Si pasa los 140 caracteres, deshabilitar el botón.
+ 	if(caracter >= 141){
+ 		return boton.disabled = true;
+ 	} else{
+ 		return boton.disabled = false;
+ 	};
+ 	//tiene q ser numero para que funcione
+ 	if(caracter >= 120){
+ 		limiteInicial.classList.add("red");
+ 		//limiteInicial.setAttribute('class', 'red');
+ 	};
+ 	
+
+ };

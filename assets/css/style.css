@@ -2,7 +2,7 @@
 body{
 	margin: 0;
 	width: 100%;
-
+	box-sizing: border-box;
 	background-image: url(../Img/brick-wall.jpg);
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -118,4 +118,8 @@ button:hover{
 #posteo div p{
 	padding: 20px;
 
+}
+
+.red{
+	color: red;
 }
