@@ -14,10 +14,10 @@ boton.addEventListener("click", function(){
 	// div que contiene cada post se ira a una caja
 	var newPost = document.createElement("div");
 
-	//validar que textarea tenga un msje
-	if(comment.length == 0 || comment == null) { // si no hay nada
-		alert('Debes ingresar un mensaje');
-		return false;// para que se corte ahi la condicion sino sera true y se crea la condicion
+	//si el texto esta vacio no dejar twittear
+	if(texto.length == 0 || texto == null) { // si no hay nada
+		
+		return document.getElementById("boton").disabled = true;// para que se corte ahi la condicion sino sera true y se crea la condicion
 	};
 
 	//nodo texto ingresado con texto que se va a ver en nueva seccion
@@ -34,6 +34,8 @@ boton.addEventListener("click", function(){
 
 	//se pasa al contenedor del html
 	post.appendChild(newPost);
+
+	
 
 
 }, false);
