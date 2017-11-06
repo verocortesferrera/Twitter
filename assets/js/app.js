@@ -41,17 +41,13 @@ boton.addEventListener("click", function(){
 
 //calcular caracteres
 
-
-
- comment.onkeyup = function(){
-
+ comment.onkeyup = function(){ //detecta el uso del teclado
+ 	//obtengo el texto en p
  	var limiteInicial = document.getElementById("limite");
- 	
+ 	//obtengo el input del texarea
 	var comment = document.getElementById("comment");
- 	//caracteres del input
+ 	//calculo el largo del input(number)
  	var caracter = comment.value.length;
-
-
-
-
+ 	//PARA TRANSFORMAR EL NUMERO A TEXTO SE SUMA UN NUMERO AL TEXTO VACIO!!
+ 	limiteInicial.innerText = "" + (140 - caracter);
  }
