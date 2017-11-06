@@ -1,0 +1,121 @@
+/* estilo general*/
+body{
+	margin: 0;
+	width: 100%;
+
+	background-image: url(../Img/brick-wall.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-family: 'Inconsolata', monospace;
+}
+
+/* estilo header*/
+header{
+	margin:0;
+	height: auto;
+	background-color: #6AD2F3;
+	align-content: center;
+	margin-bottom: 30px;
+}
+
+h1{
+	margin: 0;
+	font-size: 1.8em;
+	align-content: center; 
+	padding: 20px;
+	color: #fff;
+	text-align: center;
+}
+
+/* estilo bloque left*/
+
+.info{
+	display: inline-block;
+	background-color: #fff;
+	height: auto;
+	margin-left:50px;
+	width: 40%;
+	padding: 10px;
+	margin-right: 50px;
+	vertical-align: top;
+}
+
+
+/* estilo bloque right donde sucede evento*/
+.caja{
+	display: inline-block;
+	padding: 30px;
+	background-color: #fff;
+	height: auto;
+	width: 40%;
+	vertical-align: top;
+}
+
+.contenedor{
+	height: auto;	
+}
+
+/* área para escribir*/
+textarea {
+	width: 90%;
+	height: auto;
+	color: #4E4D53;
+	padding: 1em;
+	border-radius: 1em;
+	border: none;
+	margin: 0 auto;
+	font-family: 'Inconsolata', monospace;/*no aparece*/
+	font-size: 1em;
+	box-sizing: border-box;
+
+}
+/* input posteo*/
+button {
+	background-color: #6AD2F3;
+	border: 0px;
+	cursor: pointer;
+	text-align: center;
+	width: 130px;
+	height: 30px;
+	display: block;
+	color: #FFF;
+	display: inline-block;
+}
+
+button:hover{
+	background-color: #E8E8E8;
+	color: #4D394B;
+}
+
+ button:focus, textarea:focus{
+	outline: none;
+}
+
+/* conteo caracteres*/
+.caracteres{
+	
+	display: inline-block;
+	
+	margin:30 auto;
+	width: 100px;
+	height: auto;
+}
+
+/* estilo posteo*/
+#posteo{
+	margin: 50px;
+	color: #4E4D53;
+
+}	
+
+#posteo div{
+	height: auto;
+	background-color: #E8E8E8;
+	margin:0 auto;
+
+}
+
+#posteo div p{
+	padding: 20px;
+
+}
