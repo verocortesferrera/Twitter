@@ -42,6 +42,27 @@ boton.addEventListener("click", function(){
 	//se pasa al contenedor del html
 	post.appendChild(newPost);
 
+	//traer la hora
+    var dato = new Date();
+    var hh = dato.getHours();
+    var mm = dato.getUTCMinutes();
+
+   //Nodo de texto con hora 
+    var textHora = document.createTextNode(hh + ':' + mm);
+
+   //poner la hora en un nuevo elemento p
+    var time = document.createElement("p");
+
+    //agregar texto al p creado
+    time.innerText = "hora: ";
+
+   //agregar el tiempo en el elemento p creado
+    time.appendChild(textHora);
+    //agregar al div padre que aparece al postear
+    newPost.appendChild(time);
+
+
+	//limpiar caracter, resetear a 140
 	document.getElementById("limite").innerHTML = "140";
 
 	

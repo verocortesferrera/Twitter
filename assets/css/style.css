@@ -9,6 +9,11 @@ body{
 	font-family: 'Inconsolata', monospace;
 }
 
+#posteo div p{
+	margin: 0;
+	
+}
+
 /* estilo header*/
 header{
 	margin:0;
