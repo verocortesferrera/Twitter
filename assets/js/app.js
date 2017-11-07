@@ -83,6 +83,9 @@ boton.addEventListener("click", function(){
  	//calculo el largo del input(number)
  	var caracter = comment.value.length;
 
+ 	//agrande las filas que estaba definida en 1 en el html y eso agrandaria el div
+ 	comment.rows = 3;
+ 	
  	
  	//PARA TRANSFORMAR EL NUMERO A TEXTO SE SUMA UN NUMERO AL TEXTO VACIO!!
  	limiteInicial.innerText = "" + (140 - caracter);
@@ -94,10 +97,25 @@ boton.addEventListener("click", function(){
  		return boton.disabled = false;
  	};
  	//tiene q ser numero para que funcione
- 	if(caracter >= 120){
- 		limiteInicial.classList.add("red");
+ 	//  si quedan  de 20 acaracteres cambiar color del texto
+ 	if(caracter >= 120 && caracter < 130){
+ 		limite.style.color = "red";
+ 		//limiteInicial.classList.add("red");
  		//limiteInicial.setAttribute('class', 'red');
+ 	} else if(caracter >= 130){
+ 		limiteInicial.classList.add("blue");
  	};
+ 	
  	
 
  };
+
+/*
+//intento que agrande el div al ingresar texto
+ function textAreaAdjust(o) {
+    o.style.height = "1px";
+    setTimeout(function() {
+        o.style.height = (o.scrollHeight)+"px";
+    }, 1);
+}
+*/

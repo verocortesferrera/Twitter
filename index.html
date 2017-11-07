@@ -20,7 +20,7 @@
 	<!--seccion textarea, boton y posteo-->
 	<section id="caja" class="caja">
 		<form id="contenedor" class="contenedor">
-			<textarea name="texto" id="comment" placeholder="Añade un comentario..."></textarea>
+			<textarea name="texto" id="comment" placeholder="Añade un comentario..." rows="1" onkeyup="textAreaAdjust(this)"></textarea>
 			<hr>
 			<button type="button" id="boton">Twetts</button>
 			<p id="limite">140</p>	
