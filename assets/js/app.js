@@ -20,10 +20,10 @@ boton.addEventListener("click", function(){
 
 	//si el texto esta vacio no dejar twittear
 	if(texto.length == 0 || texto == null) { // si no hay nada
-		//desabilita el boton
-		return boton.disabled = true;// para que se corte ahi la condicion sino sera true y se crea la condicion
+			//desabilita el boton
+			return boton.disabled = true;// para que se corte ahi la condicion sino sera true y se crea la condicion
 	
-	} else{
+		} else{
 
 	};
 
@@ -83,8 +83,7 @@ boton.addEventListener("click", function(){
  	//calculo el largo del input(number)
  	var caracter = comment.value.length;
 
- 	//agrande las filas que estaba definida en 1 en el html y eso agrandaria el div
- 	comment.rows = 3;
+ 	
  	
  	
  	//PARA TRANSFORMAR EL NUMERO A TEXTO SE SUMA UN NUMERO AL TEXTO VACIO!!
@@ -92,30 +91,35 @@ boton.addEventListener("click", function(){
 
  	//Si pasa los 140 caracteres, deshabilitar el botón.
  	if(caracter >= 141){
- 		return boton.disabled = true;
- 	} else{
- 		return boton.disabled = false;
- 	};
+ 			return boton.disabled = true;
+ 		} else{
+ 			return boton.disabled = false;
+ 		};
  	//tiene q ser numero para que funcione
  	//  si quedan  de 20 acaracteres cambiar color del texto
  	if(caracter >= 120 && caracter < 130){
- 		limite.style.color = "red";
+ 			limite.style.color = "red";
  		//limiteInicial.classList.add("red");
  		//limiteInicial.setAttribute('class', 'red');
- 	} else if(caracter >= 130){
- 		limiteInicial.classList.add("blue");
- 	};
+ 		} else if(caracter >= 130){
+ 			limiteInicial.classList.add("blue");
+ 		};
  	
  	
 
  };
 
-/*
-//intento que agrande el div al ingresar texto
- function textAreaAdjust(o) {
-    o.style.height = "1px";
-    setTimeout(function() {
-        o.style.height = (o.scrollHeight)+"px";
-    }, 1);
-}
-*/
+// funcion para agrandar el div cuendo se escriba
+
+//llamo al comment
+var textarea = document.getElementById("comment");
+//establecer limite
+var limite = 150;
+
+//generar una funcion basada en el input del textarea
+textarea.oninput = function() {
+	//textarea la altura vacia(auto en css)
+  textarea.style.height = "";
+  //agoritmo 
+  textarea.style.height = Math.min(textarea.scrollHeight, 200) + "px";
+};
