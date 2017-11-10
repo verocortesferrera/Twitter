@@ -73,7 +73,7 @@ boton.addEventListener("click", function(){
 
 //calcular caracteres
 
- comment.onkeyup = function(){ //detecta el uso del teclado
+ comment.onkeydown = function(){ //detecta el uso del teclado
 
  	
  	//obtengo el texto en p
@@ -84,29 +84,37 @@ boton.addEventListener("click", function(){
  	var caracter = comment.value.length;
 
  	
- 	
- 	
  	//PARA TRANSFORMAR EL NUMERO A TEXTO SE SUMA UN NUMERO AL TEXTO VACIO!!
  	limiteInicial.innerText = "" + (140 - caracter);
 
  	//Si pasa los 140 caracteres, deshabilitar el botón.
  	if(caracter >= 141){
- 			return boton.disabled = true;
+ 			 boton.disabled = true;
  		} else{
- 			return boton.disabled = false;
+ 			 boton.disabled = false;
  		};
- 	//tiene q ser numero para que funcione
- 	//  si quedan  de 20 acaracteres cambiar color del texto
- 	if(caracter >= 120 && caracter < 130){
- 			limite.style.color = "red";
- 		//limiteInicial.classList.add("red");
- 		//limiteInicial.setAttribute('class', 'red');
- 		} else if(caracter >= 130){
- 			limiteInicial.classList.add("blue");
- 		};
- 	
- 	
 
+ 		//tiene q ser numero para que funcione
+ 		//  si quedan  de 20 acaracteres cambiar color del texto
+		if(caracter >= 120 && caracter < 130){
+			//limiteInicial.classList.add("red");
+			//remuevo bluo para cuando reste caracteres
+			limiteInicial.classList.remove('blue');
+			//agrego clase red 
+			limiteInicial.classList.add('red');
+		} else if(caracter >= 130){
+			//quito clase red
+			limiteInicial.classList.remove('red');
+			//agrego clase blue
+			limiteInicial.classList.add('blue');
+		}
+		else{
+
+			//si no cumple con niuna condicion quito ambas clases y vuelve a la normalidad
+			limiteInicial.classList.remove('red');
+			limiteInicial.classList.remove('blue');
+		};
+ 		
  };
 
 // funcion para agrandar el div cuendo se escriba
